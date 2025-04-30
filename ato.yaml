@@ -1,4 +1,4 @@
-requires-atopile: "0.6.0"
+requires-atopile: 0.6.0
 
 paths:
   src: ./
@@ -21,3 +21,19 @@ builds:
 #   summary: # fill me!
 #   license: GNU General Public License v3
 #   homepage: # fill me!
+dependencies:
+- type: registry
+  identifier: atopile/usb-connectors
+  release: 0.1.0
+- type: registry
+  identifier: eigenlucy/e22900m30s
+  release: 0.1.1
+- type: registry
+  identifier: eigenlucy/nonhumanscent
+  release: 0.0.1
+- type: registry
+  identifier: eigenlucy/micromppt
+  release: 3.0.0
+- type: registry
+  identifier: eigenlucy/particlecounter
+  release: 0.0.1
