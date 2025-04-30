@@ -31,4 +31,4 @@ component ATGM336H:
     power.gnd ~ GND
 
     i2c = new I2C
-    SCL ~ i2c.scl; SDA ~ i2c.sda; i2c.gnd ~ GND
+    SCL ~ i2c.scl; SDA ~ i2c.sda

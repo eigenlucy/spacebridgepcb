@@ -1,5 +1,5 @@
 import ElectricPower, I2C, SPI, Capacitor, Resistor
-from "eigenlucy/e22900m30s/main.ato" import E22900M30S
+from "eigenlucy/e22900m30s/main.ato" import Lora
 from "eigenlucy/micromppt/elec/src/micromppt.ato" import Micromppt
 from "atopile/usb-connectors/usb-connectors.ato" import USBCConn
 from "atgm336h.ato" import ATGM336H
@@ -7,4 +7,19 @@ from "atopile/esp32s3/esp32s3.ato" import ESP32S3
 from "eigenlucy/particlecounter/main.ato" import ParticleCounter
 
 module App:
-    pass
+    power = new ElectricPower # for common grounds
+    power_5V = new ElectricPower
+    power_5V.gnd ~ power.gnd
+    power_3V3 = new ElectricPower
+
+    power_3V3.gnd ~ power.gnd
+
+    mppt = new Micromppt
+
+    uc = new ESP32S3
+
+    lora = new Lora
+
+    gps = new ATGM336H
+
+    detector = new ParticleCounter
